@@ -10,9 +10,47 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// MONGOOSE
+mongoose.connect("mongodb://localhost:27017/reviewApp");
+
+const reviewSchema = new mongoose.Schema({
+  reviewName: String,
+  reviewBody: String,
+});
+
+const Review = mongoose.model("Review", reviewSchema);
+const reviewInit = new Review({
+  reviewName: "Adam",
+  reviewBody: "Napicu stranka",
+});
+
+//reviewInit.save();
+
 //APP GET
 app.get("/", function (req, res) {
-  res.send("Well hello there");
+  Review.find({}, function (err, reviewsFound) {
+    console.log(reviewsFound);
+    res.render("home", {
+      reviews: reviewsFound,
+    });
+  });
+});
+
+app.get("/review", function (req, res) {
+  res.render("review", {});
+});
+
+// APP POST
+
+app.post("/addReview", function (req, res) {
+  const name = req.body.reviewName;
+  const body = req.body.reviewBody;
+  const review = new Review({
+    reviewName: name,
+    reviewBody: body,
+  });
+  review.save();
+  res.redirect("/");
 });
 
 app.listen(3000, function () {

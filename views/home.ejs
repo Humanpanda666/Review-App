@@ -1,0 +1,9 @@
+<h1>All reviews</h1>
+<h2>Check them out!</h2>
+<h4>From: Name</h4>
+<p>Pekne napicu stranka</p>
+
+<% reviews.forEach(function(review){ %>
+<h4>From: <%=review.reviewName%></h4>
+<p><%=review.reviewBody%></p>
+<%})%>
