@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+body {
+  background-color: #121212;
+  color: white;
+  overflow-x: hidden;
+  font-family: "JetBrains Mono", monospace;
+}
+a {
+  all: unset;
+  transition: 0.5s;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+li {
+  font-size: x-large;
+  font-weight: bold;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto;
+}
+.main {
+  text-align: center;
+  margin: auto;
+}
+.review {
+  margin: auto;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 5px;
+  border-top: #1d1d1d 1px solid;
+  transition: 0.5s;
+  box-shadow: -1px 8px 6px 1px rgba(0, 0, 0, 0.15);
+}
+.navbar {
+  text-align: center;
+  justify-content: center;
+}
+.addReview {
+  margin-right: 2%;
+  float: right;
+}
+.navbarDiv {
+  display: flex;
+  background-color: #181818;
+  padding: 1.5%;
+  padding-top: 2%;
+  margin-top: -1%;
+  margin-left: -1%;
+  margin-right: -1%;
+  box-shadow: -1px 11px 22px 1px rgba(0, 0, 0, 0.15);
+  border-bottom: #1d1d1d 1px solid;
+}
+.home {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 100%;
+}
+a:hover {
+  color: #ff0000;
+}
+.btn {
+  background-color: #ff0000;
+  border: 1px solid transparent;
+  border-radius: 0.15rem;
+  color: white;
+  padding: 0.75%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btn:hover {
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  background-color: #181818;
+}
+.reviewForm {
+  margin: auto;
+  margin-top: 5%;
+  justify-content: center;
+  text-align: center;
+}
+.label {
+  font-weight: bold;
+  margin-right: 1%;
+}
+.input {
+  margin-bottom: 2%;
+}
+.newReview {
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 2%;
+  text-align: left;
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  border-radius: 5px;
+  border-top: #1d1d1d 1px solid;
+  transition: 0.5s;
+  box-shadow: -1px 8px 6px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+}
+.btnAdd {
+  margin-top: 3%;
+  padding: 3%;
+}

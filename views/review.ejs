@@ -1,9 +1,12 @@
-<form action="addReview" method="post">
-  <label for="reviewName">Your name</label>
-  <input type="text" name="reviewName" />
-  <br />
-  <label for="reviewBody">Your review</label>
-  <textarea name="reviewBody" rows="6"></textarea>
-  <br />
-  <button type="submit">Add your review</button>
-</form>
+<%- include("header") -%>
+<div class="newReview">
+  <form action="addReview" method="post" class="reviewForm">
+    <label for="reviewName" class="label">Your name:</label>
+    <input type="text" name="reviewName" class="input" />
+    <br />
+    <label for="reviewBody" class="label">Your review:</label>
+    <textarea name="reviewBody" rows="6"></textarea>
+    <br />
+    <button class="btn btnAdd" type="submit">Add your review</button>
+  </form>
+</div>

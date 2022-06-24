@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const app = express();
+app.use(express.static(__dirname + "/public"));
 
 // APP things
 app.set("view engine", "ejs");
@@ -19,10 +20,6 @@ const reviewSchema = new mongoose.Schema({
 });
 
 const Review = mongoose.model("Review", reviewSchema);
-const reviewInit = new Review({
-  reviewName: "Adam",
-  reviewBody: "Napicu stranka",
-});
 
 //reviewInit.save();
 

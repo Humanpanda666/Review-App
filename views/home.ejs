@@ -1,9 +1,12 @@
-<h1>All reviews</h1>
-<h2>Check them out!</h2>
-<h4>From: Name</h4>
-<p>Pekne napicu stranka</p>
+<%- include("header") -%>
+<div class="container main">
+  <h2>All reviews</h2>
+  <h3>Check them out!</h3>
+</div>
 
 <% reviews.forEach(function(review){ %>
-<h4>From: <%=review.reviewName%></h4>
-<p><%=review.reviewBody%></p>
+<div class="review">
+  <h4>From: <%=review.reviewName%></h4>
+  <p><%=review.reviewBody%></p>
+</div>
 <%})%>
