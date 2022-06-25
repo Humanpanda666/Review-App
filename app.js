@@ -3,6 +3,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+const mongoDB = process.env.MONGO;
+
 const app = express();
 app.use(express.static(__dirname + "/public"));
 
@@ -12,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // MONGOOSE
-mongoose.connect("mongodb://localhost:27017/reviewApp");
+mongoose.connect(mongoDB, {});
 
 const reviewSchema = new mongoose.Schema({
   reviewName: String,
@@ -20,8 +23,6 @@ const reviewSchema = new mongoose.Schema({
 });
 
 const Review = mongoose.model("Review", reviewSchema);
-
-//reviewInit.save();
 
 //APP GET
 app.get("/", function (req, res) {
@@ -50,6 +51,6 @@ app.post("/addReview", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
   console.log("Server started on port 3000");
 });
