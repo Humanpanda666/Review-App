@@ -7,7 +7,7 @@ const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 require("dotenv").config();
-const mongoDB = process.env.MONGO;
+const mongoDB = process.env.MONGO_URI;
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
@@ -54,6 +54,11 @@ app.post("/addReview", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(process.env.PORT, function () {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });
