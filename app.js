@@ -54,6 +54,29 @@ app.post("/addReview", function (req, res) {
   res.redirect("/");
 });
 
+//DELETE
+app.get("/delete/:productID", function (req, res) {
+  const requestItem = req.params.productID;
+  console.log(requestItem);
+  Review.find({}, function (err, itemsFound) {
+    if (err) {
+      console.log(err);
+    } else {
+      itemsFound.forEach(function (item) {
+        if (item._id == requestItem) {
+          Review.deleteOne({ _id: requestItem }, function (err, results) {
+            if (err) {
+              res.send(err);
+            } else {
+              res.redirect("/");
+            }
+          });
+        }
+      });
+    }
+  });
+});
+
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;

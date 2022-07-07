@@ -6,7 +6,12 @@
 
 <% reviews.forEach(function(review){ %>
 <div class="review">
-  <h4>From: <%=review.reviewName%></h4>
-  <p><%=review.reviewBody%></p>
+  <div class="reviewDiv">
+    <h4>From: <%=review.reviewName%></h4>
+    <p><%=review.reviewBody%></p>
+  </div>
+  <div class="xDiv">
+    <a href="/delete/<%= review._id %>  " class="reviewItem">X</a>
+  </div>
 </div>
 <%})%>
